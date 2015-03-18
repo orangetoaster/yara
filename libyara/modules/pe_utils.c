@@ -47,7 +47,7 @@ time_t timegm(
 // Taken from http://stackoverflow.com/questions/10975542/asn1-time-conversion
 // and cleaned up. Also uses timegm(3) instead of mktime(3).
 
-static time_t ASN1_get_time_t(
+time_t ASN1_get_time_t(
   	ASN1_TIME* time)
 {
   struct tm t;
@@ -95,7 +95,7 @@ static time_t ASN1_get_time_t(
 // "ordN" and if that fails, return NULL. The caller is responsible for freeing
 // the returned string.
 
-static char *ord_lookup(
+char *ord_lookup(
     char *dll,
     uint16_t ord)
 {
